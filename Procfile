@@ -1,1 +1,1 @@
-web: php public/index.php 
+web: php -S 0.0.0.0:8000 -t public 

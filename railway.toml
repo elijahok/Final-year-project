@@ -1,0 +1,16 @@
+# Railway PHP Deployment Configuration
+
+[build]
+builder = "heroku/buildpacks:20"
+
+[deploy]
+startCommand = "php -S 0.0.0.0:8000 -t public"
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 10
+
+[[services]]
+name = "web"
+internal_port = 8000
+
+[services.variables]
+PORT = "8000"
