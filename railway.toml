@@ -2,4 +2,12 @@
 builder = "heroku/buildpacks:20"
 
 [deploy]
-startCommand = "php -S 0.0.0.0:8000 -t public"
+startCommand = "php -S 0.0.0.0:$PORT -t public"
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 10
+
+[[services]]
+name = "web"
+
+[services.ports]
+port = 8000
