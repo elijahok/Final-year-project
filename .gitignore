@@ -19,6 +19,9 @@ config/config.production.php
 logs/
 *.log
 
+# Deployment configuration (allow vercel.json)
+!vercel.json
+
 # Runtime data
 pids/
 *.pid
